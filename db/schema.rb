@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170309083602) do
+ActiveRecord::Schema.define(version: 20170310150732) do
 
   create_table "problems", force: :cascade do |t|
     t.string   "pname"
@@ -27,6 +27,20 @@ ActiveRecord::Schema.define(version: 20170309083602) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.index ["problem_id"], name: "index_submissions_on_problem_id"
+  end
+
+  create_table "test_cases", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "testcase_file_name"
+    t.string   "testcase_content_type"
+    t.integer  "testcase_file_size"
+    t.datetime "testcase_updated_at"
+    t.string   "testcase_output_file_name"
+    t.string   "testcase_output_content_type"
+    t.integer  "testcase_output_file_size"
+    t.datetime "testcase_output_updated_at"
   end
 
 end
