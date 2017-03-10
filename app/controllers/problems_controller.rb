@@ -8,7 +8,7 @@ class ProblemsController < ApplicationController
 
   def problem
     pcode = params[:pcode]
-    @problem = Problem.where(pcode: pcode).first
+    @problem = Problem.by_pcode(pcode).first
     json_response(@problem)
   end
 end
