@@ -10,15 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170311080356) do
+ActiveRecord::Schema.define(version: 20170311135642) do
 
   create_table "problems", force: :cascade do |t|
     t.string   "pname"
     t.string   "pcode"
     t.string   "statement"
     t.boolean  "state"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "submissions_count"
   end
 
   create_table "submissions", force: :cascade do |t|
@@ -43,6 +44,8 @@ ActiveRecord::Schema.define(version: 20170311080356) do
     t.string   "testcase_output_content_type"
     t.integer  "testcase_output_file_size"
     t.datetime "testcase_output_updated_at"
+    t.integer  "problem_id"
+    t.index ["problem_id"], name: "index_test_cases_on_problem_id"
   end
 
 end
