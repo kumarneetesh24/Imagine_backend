@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170310150732) do
+ActiveRecord::Schema.define(version: 20170311080356) do
 
   create_table "problems", force: :cascade do |t|
     t.string   "pname"
@@ -22,10 +22,12 @@ ActiveRecord::Schema.define(version: 20170310150732) do
   end
 
   create_table "submissions", force: :cascade do |t|
-    t.string   "status_code", default: "PE"
+    t.string   "status_code",      default: "PE"
     t.integer  "problem_id"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "user_source_code"
+    t.string   "error_desc"
     t.index ["problem_id"], name: "index_submissions_on_problem_id"
   end
 
