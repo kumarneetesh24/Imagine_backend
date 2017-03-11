@@ -5,5 +5,6 @@ class Problem < ApplicationRecord
   accepts_nested_attributes_for :test_cases, allow_destroy: true
 
   scope :by_pcode, ->(pcode) { where(pcode: pcode) }
+  scope :active, -> { where(state: true) }
   validates_presence_of :pcode
 end

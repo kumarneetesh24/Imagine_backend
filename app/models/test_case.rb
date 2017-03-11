@@ -6,7 +6,6 @@ class TestCase < ApplicationRecord
 
   belongs_to :problem, inverse_of: :test_cases
 
-
   before_create :create_test_data
   after_destroy :delete_test_data
 

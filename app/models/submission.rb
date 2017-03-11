@@ -1,7 +1,7 @@
 class Submission < ApplicationRecord
   belongs_to :problem, counter_cache: true, inverse_of: :submissions
 
-  scope :by_id, -> (id){ where(id: id)   }
+  scope :by_id, ->(id) { where(id: id) }
 
   after_create :create_submission_data
   before_destroy :delete_submission_data
