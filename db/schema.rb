@@ -10,7 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170311135642) do
+ActiveRecord::Schema.define(version: 20170313055824) do
+
+  create_table "languages", force: :cascade do |t|
+    t.string   "lang_code",     null: false
+    t.string   "equal"
+    t.string   "greater"
+    t.string   "smaller"
+    t.string   "double_equals"
+    t.string   "and"
+    t.string   "or"
+    t.string   "int"
+    t.string   "string"
+    t.string   "print"
+    t.string   "read"
+    t.string   "function"
+    t.string   "return"
+    t.string   "if_else"
+    t.string   "for"
+    t.string   "while"
+    t.string   "do_while"
+    t.string   "switch"
+    t.string   "continue"
+    t.string   "break"
+    t.string   "start_bkt"
+    t.string   "end_bkt"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "problems", force: :cascade do |t|
     t.string   "pname"
