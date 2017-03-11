@@ -33,6 +33,15 @@ gem 'rubocop'
 gem 'rails_admin'
 # gem 'snappconfig' for global config
 gem 'snappconfig'
+# use gem 'sidekiq' for workers to judge process
+gem 'sidekiq'
+# various options for gem sidekiq
+gem 'sinatra', :require => nil
+gem 'slim'
+gem 'sidetiq'
+gem 'sidekiq-status'
+gem 'sidekiq-failures'
+gem 'sidekiq-unique-jobs'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
