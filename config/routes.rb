@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   get '/problems/:pcode' => 'problems#problem', as: 'problem'
   post '/submit/' => 'submission#verify_submission', as: 'submit'
   get '/get_submission/:submission_id' => 'submission#get_submission', as: 'get_submission'
-  get '/language/:lang_code' => 'languages#index', as: 'language'
+  get '/languages' => 'languages#index', as: 'languages'
+  get '/languages/:lang_code' => 'languages#language', as: 'language'
 end
